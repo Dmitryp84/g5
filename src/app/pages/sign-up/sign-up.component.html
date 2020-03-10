@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-4">
+      <div class="auth-container">
+        <h3>Sign Up</h3>
+        <input type="email" class="form-control" placeholder="Email Address" #userEmail required>
+        <input type="password" class="form-control" placeholder="Password" #userPwd required>
+        <input type="button" class="btn btn-primary" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
+        <div class="mt-2">
+          <h4>Or you can...</h4>
+          <button type="button" class="btn btn-outline-primary btn-block" (click)="authService.GoogleAuth()">
+            <fa-icon [icon]="icon.faGoogle"></fa-icon>
+            Continue with Google
+          </button>
+          <button type="button" class="btn btn-outline-primary btn-block" (click)="authService.FacebookAuth()">
+            <fa-icon [icon]="icon.faFacebook"></fa-icon>
+            Continue with Facebook
+          </button>
+          <button type="button" class="btn btn-outline-primary btn-block" (click)="authService.FacebookAuth()">
+            <fa-icon [icon]="icon.faGithub"></fa-icon>
+            Continue with Github
+          </button>
+        </div>
+      </div>
+      <div class="redirectToLogin">
+        <span>Already have an account? <a class="redirect" routerLink="/sign-in">Sign In</a></span>
+      </div>
+    </div>
+  </div>
+</div>

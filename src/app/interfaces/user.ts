@@ -1,4 +1,4 @@
-export interface IUser {
+export interface IGitUser {
     "login": string,
     "id": number,
     "node_id": string,
@@ -20,8 +20,16 @@ export interface IUser {
     "score": number
 }
 
-export interface IUserResponse {
+export interface IGitUserResponse {
     "total_count": number,
     "incomplete_results": false,
-    "items": IUser[]
+    "items": IGitUser[]
 }
+
+export interface IUser {
+    uid: string;
+    email: string;
+    displayName: string;
+    photoURL: string;
+    emailVerified: boolean;
+ }

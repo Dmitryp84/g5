@@ -36,7 +36,7 @@ export class AuthService {
   SignIn(email, password) {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((result) => {
-             this.router.navigate(['dashboard']);
+             this.router.navigate(['blocks']);
           this.SetUserData(result.user);
       }).catch((error) => {
         alert(error.message)
@@ -48,7 +48,7 @@ export class AuthService {
       .then((result) => {
       //this.SendVerificationMail();
         this.SetUserData(result.user);
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['blocks']);
       }).catch((error) => {
         console.log(error.message)
       })
@@ -83,10 +83,14 @@ export class AuthService {
     return this.AuthLogin(new auth.FacebookAuthProvider());
   }
 
+  GitAuth() {
+    return this.AuthLogin(new auth.GithubAuthProvider());
+  }
+
   AuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
     .then((result) => {
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['blocks']);
       this.SetUserData(result.user);
     }).catch((error) => {
       alert(error)

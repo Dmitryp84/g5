@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+.nav-link {
+    cursor: pointer;
+}
+
+.auth-container {
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0 1px #e5e5e5;
+    padding: 15px;
+
+    .btn {
+        margin-top: .25rem;
+        margin-bottom: .25rem;
+    }
+
+    .form-control+.form-control {
+         margin-top: .5rem;
+    }
+}

@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-4">
+            <div class="auth-container">
+             <h3>Sign In</h3>
+
+              <input type="text" class="form-control" placeholder="Username" #userName required>
+
+              <input type="password" class="form-control" placeholder="Password" #userPassword required>
+      
+              <input type="button" class="btn btn-primary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
+
+              <div>
+                  <span>Don't have an account?<a routerLink="/sign-up"> Sign Up</a></span>
+              </div>
+        </div>  
+        
+      </div>
+      <div class="col-md-auto">
+        <div class="auth-container">
+        <h3>Sign in with</h3>
+   
+            <button type="button" class="btn btn-outline-primary btn-block" (click)="authService.GoogleAuth()">
+              <fa-icon [icon]="icon.faGoogle"></fa-icon>
+              Google
+            </button>
+
+            <button type="button" class="btn btn-outline-primary btn-block" (click)="authService.FacebookAuth()">
+                <fa-icon [icon]="icon.faFacebook"></fa-icon>
+              Facebook
+            </button>
+
+            <button type="button" class="btn btn-outline-primary btn-block" (click)="authService.FacebookAuth()">
+              <fa-icon [icon]="icon.faGithub"></fa-icon>
+              Continue with Github
+            </button>
+        </div>
+
+      </div>
+
+    </div>
+   
+  </div>
+
+
+  
+
