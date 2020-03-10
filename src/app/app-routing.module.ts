@@ -14,14 +14,15 @@ const redirectLoggedInToDashboard = () => redirectLoggedInTo(['blocks']);
 const routes: Routes = [
   { path: 'blocks', pathMatch: 'full', component: BlocksComponent, canActivate: [AngularFireAuthGuard],  data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'table', component: TableComponent, canActivate: [AngularFireAuthGuard],  data: { authGuardPipe: redirectUnauthorizedToLogin }},
-  { path: 'detail', component: DetailComponent, canActivate: [AngularFireAuthGuard],  data: { authGuardPipe: redirectUnauthorizedToLogin }},
+  { path: 'detail/:login', component: DetailComponent, canActivate: [AngularFireAuthGuard],  data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'sign-up', component: SignUpComponent,  data: { authGuardPipe: redirectLoggedInToDashboard } },
   { path: 'sign-in', component: SignInComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectLoggedInToDashboard }},
   { path: '',
     redirectTo: '/sign-in',
     pathMatch: 'full'
   },
-  { path: '**', component: NotFoundComponent }
+  {path: '404', component: NotFoundComponent},
+  {path: '**', redirectTo: '/404'}
 ];
 
 @NgModule({

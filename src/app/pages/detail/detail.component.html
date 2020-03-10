@@ -1,1 +1,8 @@
-<p>detail works!</p>
+<div *ngIf="(user$ | async) as user else notfound">
+    <img src="{{user.avatar_url}}" alt="{{user.login}}" title="{{user.id}} | {{user.login}}"><br>
+    {{user.login}}<br>
+    {{user.type}}<br>
+    {{user.html_url}}<br>
+</div>
+
+<ng-template #notfound>Nothing to show</ng-template>

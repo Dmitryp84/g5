@@ -1,1 +1,5 @@
-<p>blocks works!</p>
+<app-search #searchEll></app-search>
+
+<div *ngFor="let user of users$ | async" [routerLink]="['/detail', user.login]">
+    {{user.id}} - {{user.login}} 
+</div>

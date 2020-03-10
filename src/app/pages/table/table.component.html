@@ -1,1 +1,16 @@
-<p>table works!</p>
+<app-search #searchEll></app-search>
+
+<table class="table table-striped table-hover" *ngIf="(users$ | async)">
+    <thead class="thead-dark">
+        <tr>
+        <th scope="col">id</th>
+        <th scope="col">login</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor="let user of users$ | async" [routerLink]="['/detail', user.login]">
+        <td>{{user.id}}</td>
+        <td>{{user.login}}</td>
+        </tr>
+    </tbody>
+</table>

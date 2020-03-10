@@ -1,6 +1,7 @@
 import { StorageService } from './services/storage.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
+import { SearchComponent } from './commonComponents/search/search.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
     DetailComponent,
     NotFoundComponent,
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    HttpClientModule
   ],
   providers: [StorageService, AngularFireAuthGuard],
   bootstrap: [AppComponent]

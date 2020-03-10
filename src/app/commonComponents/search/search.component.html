@@ -1,0 +1,2 @@
+<input type="text" #searchInput (keyup.enter)="search($event.target.value)"  >
+<button (click)="search(searchInput.value)">Search</button>
