@@ -22,6 +22,8 @@ import { environment } from '../environments/environment';
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { SearchComponent } from './commonComponents/search/search.component';
 
+import {NgbDropdown} from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,

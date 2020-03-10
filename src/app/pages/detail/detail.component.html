@@ -1,8 +1,20 @@
-<div *ngIf="(user$ | async) as user else notfound">
-    <img src="{{user.avatar_url}}" alt="{{user.login}}" title="{{user.id}} | {{user.login}}"><br>
-    {{user.login}}<br>
-    {{user.type}}<br>
-    {{user.html_url}}<br>
-</div>
+<div class="card mb-3" style="max-width: 800px;" *ngIf="(user$ | async) as user else notfound">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{{user.avatar_url}}" class="card-img" alt="{{user.login}}">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{user.login}}</h5>
+          <p class="card-text">User type: <strong>{{user.type}}</strong></p>
+          <p class="card-text">User url: <a href="{{user.html_url}}" target="_blank">{{user.html_url}}</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<ng-template #notfound>Nothing to show</ng-template>
+<ng-template #notfound>loading</ng-template>
+
+
+
+

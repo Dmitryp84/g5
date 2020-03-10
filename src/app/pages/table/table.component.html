@@ -8,7 +8,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr  *ngFor="let user of users$ | async" [routerLink]="['/detail', user.login]">
+        <tr  *ngFor="let user of users$ | async" [routerLink]="['/detail', user.login]" class="clickable">
         <td>{{user.id}}</td>
         <td>{{user.login}}</td>
         </tr>

@@ -1,5 +1,11 @@
 <app-search #searchEll></app-search>
 
-<div *ngFor="let user of users$ | async" [routerLink]="['/detail', user.login]">
-    {{user.id}} - {{user.login}} 
+
+<div class="row mb-3" *ngIf="users$ | async">
+    <div class="col-3 bg-dark text-white">ID</div>
+    <div class="col-9 bg-dark text-white">Login</div>    
+</div>
+<div class="row mb-2 clickable" *ngFor="let user of users$ | async" [routerLink]="['/detail', user.login]">
+    <div class="col-3">{{user.id}}</div>
+    <div class="col-9">{{user.login}} </div>    
 </div>

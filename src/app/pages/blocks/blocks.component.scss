@@ -1,0 +1,10 @@
+.row.clickable {
+
+    transition: transform .3s;
+
+    &:hover {
+        transform: scale(1.02);
+        font-weight: bold;
+        background-color: #f8f9fa;
+    }
+}

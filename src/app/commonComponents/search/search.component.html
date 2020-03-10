@@ -1,2 +1,17 @@
-<input type="text" #searchInput (keyup.enter)="search($event.target.value)"  >
-<button (click)="search(searchInput.value)">Search</button>
+<div class="row justify-content-md-center">
+    <div class="col col-lg-5">
+<div class="input-group mb-3">
+    <input type="text" 
+    #searchInput 
+    (keyup.enter)="search($event.target.value)" 
+    class="form-control" 
+    aria-describedby="search-button" 
+    placeholder="Enter user name">
+    <div class="input-group-append">
+        <button 
+        (click)="search(searchInput.value)"  
+        class="btn btn-outline-primary" 
+        type="button" id="search-button">Search</button>
+    </div>
+</div>
+</div></div>

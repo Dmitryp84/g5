@@ -26,11 +26,11 @@
         <li class="nav-item" [routerLinkActive]="['active']" *ngIf="!(authService.isLoggedIn$ | async)">
           <a class="nav-link" [routerLink]="['sign-in']">Sign In</a>
         </li>
-        <li class="nav-item" *ngIf="(authService.isLoggedIn$ | async) as user">
-          {{user.displayName}}
-        </li>
-        <li class="nav-item" *ngIf="(authService.isLoggedIn$ | async) as user">
+        <li class="nav-item mr-2" *ngIf="(authService.isLoggedIn$ | async) as user">
           <img src="{{user.photoURL}}" alt="{{user.displayName}}" class="user-photo">
+        </li>
+        <li class="nav-item mr-3" *ngIf="(authService.isLoggedIn$ | async) as user">
+          <span class="navbar-text">{{user.displayName}}</span>
         </li>
         <li class="nav-item" *ngIf="(authService.isLoggedIn$ | async) as user">
           <a class="nav-link" (click)="authService.SignOut()">Exit</a>
@@ -40,5 +40,6 @@
   </div>
 </nav>
 
-
-<router-outlet></router-outlet>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
